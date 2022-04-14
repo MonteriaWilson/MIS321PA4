@@ -19,6 +19,7 @@ namespace api.Controllers
         [HttpGet]
         public List<Song> Get()
         {
+            System.Console.WriteLine("we are here");
             List<Song> mySong = new List<Song>();
             ReadSong readSong = new ReadSong();
             return readSong.GetAll();
@@ -51,7 +52,6 @@ namespace api.Controllers
         public void Put(int id, [FromBody] Song song)
         {
             UpdateSong updateSong = new UpdateSong();
-            updateSong.Update(song);
             updateSong.FavoriteUpdate(song);
         }
 

@@ -12,7 +12,7 @@ namespace api
             string username= "notrxf94ewo1aeqa";
             string password = "orm12n9wd9wlgo3b";
 
-            cs =$@"server ={server}; user = {username};database ={database}; port = {port};password={password}; convert zero datetime=True";
+            cs =$@"server ={server}; user = {username};database ={database}; port = {port};password={password};";
         }
     }
 }

@@ -9,9 +9,9 @@ namespace api.database
     {
         public List<Song> GetAll()
         {
-             List<Song> playlist = new List<Song>();
+             
 
-
+            List<Song> playlist = new List<Song>();
             connectionstring myConnection = new connectionstring();
             string cs = myConnection.cs;
 
@@ -27,7 +27,7 @@ namespace api.database
 
             while(rdr.Read())
             {
-                Song temp = new Song(){SongID= rdr.GetInt16(0),SongTitle=rdr.GetString(1), SongTimeStamp=rdr.GetDateTime(2)};
+                Song temp = new Song(){SongID= rdr.GetInt16(0),SongTitle=rdr.GetString(1), SongTimeStamp=rdr.GetDateTime(2), Favorite=rdr.GetString(3)};
                 playlist.Add(temp);
             }
 

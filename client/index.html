@@ -9,6 +9,8 @@
     <title>Big Al's BDS Playlist</title>
 </head>
 <body>
+    <script type = "text/javascript" src = "resources/scripts/index.js"></script>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Big Al's BDS Playlist</a>
@@ -86,7 +88,7 @@
         <form onsubmit="return false;">
             <label class="form-label" for="title">Enter a new song here:</label><br>
             <input class="form-control" type="text" id="title" name="title" ><br>
-            <button class="btn btn-dark">Add Song</button>
+            <button class="btn btn-dark" onclick = "postSong()" >Add Song</button>
           </form>
     </div>
 
@@ -101,23 +103,17 @@
       <form onsubmit = "return false;">
         <label class = "form-lable" for="favoriteSong"> Favorite a song here:</label><br>
         <input class = "form-control" type="text" id ="favoriteSong" name ="favoriteSong"><br>
-        <button class = "btn btn-dark"> "favoriteSong()" > Favorite Song </button>
+        <button class = "btn btn-dark" onclick= "putSong()">  Favorite Song </button>
       </form>
     </div>
     <div id = "delete" class ="container">
       <form onsubmit = "return false;">
         <label class = "form-lable" for="deleteSong"> Delete a song here:</label><br>
         <input class = "form-control" type="text" id ="deleteSong" name ="deleteSong"><br>
-        <button class = "btn btn-dark"> "deleteSong()"> Delete Song </button>
+        <button class = "btn btn-dark" onclick = "deleteSong()">  Delete Song </button>
       </form>
     </div>
-    <div id = "edit" class ="container">
-      <form onsubmit = "return false;">
-        <label class = "form-lable" for="editSong"> Edit a song here:</label><br>
-        <input class = "form-control" type="text" id ="editSong" name ="editSong"><br>
-        <button class = "btn btn-dark">"editSong()" > Edit Song </button>
-      </form>
-    </div>
+
 
     <div class="container">
         <div id="searchSongs" class="row"></div>

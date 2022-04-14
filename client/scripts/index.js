@@ -32,24 +32,50 @@ function findSongs(){
 		console.log(error);
     })
 }
-    function Get()
+
+  const baseUrl = "https://localhost:5001/api/Songs"; 
+  var songList = [];
+  var mySong = {};
+
+    function getSong()
+    {
+        const baseUrl = "https://localhost:5001/api/Songs";
+        fetch(baseUrl).then(function(response)
+        {
+            console.log(response);
+            return response.json();
+        }).then(function(json){
+            let html = " ";
+            json.forEach((song)={
+                html =+
+            }
+        }
+    }
+    
+    function postSong()
+    {
+        const baseUrl = "https://localhost:5001/api/Songs"; 
+        const addSong = document.getElementById("add").value;
+        fetch(baseUrl,{
+        method : "Post",
+        headers: {
+            "Accept" : 'application/json',
+            "Context-type": 'application/json'
+        },
+        body: JSON.stringify({
+            addSong :add
+        })
+    }).then((response)=>{
+        console.log(response);
+        getSong();
+    }
+
+    }
+    function putSong(id)
     {
         
     }
-
-    function Get(id)
-    {
-
-    }
-    function Post()
-    {
-
-    }
-    function Put()
-    {
-
-    }
-    function Delete()
+    function deleteSong(id)
     {
 
     }

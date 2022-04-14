@@ -62,32 +62,32 @@ namespace api.Utilities
         }
 
         
-        public void EditSong()
-        {
-            List<Song> playlist = new List<Song>();
+        // public void EditSong()
+        // {
+        //     List<Song> playlist = new List<Song>();
 
-            ReadSong readSong = new ReadSong();
-            playlist = readSong.GetAll();
+        //     ReadSong readSong = new ReadSong();
+        //     playlist = readSong.GetAll();
 
-            PrintPlaylist();
+        //     PrintPlaylist();
         
-            Console.WriteLine("What is the id of the song you would like to edit?");
-            int idToUpdate = int.Parse(Console.ReadLine());
+        //     Console.WriteLine("What is the id of the song you would like to edit?");
+        //     int idToUpdate = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("What is the title of the song");
-            string titleToUpdate =Console.ReadLine();
+        //     Console.WriteLine("What is the title of the song");
+        //     string titleToUpdate =Console.ReadLine();
 
-            foreach (Song song in playlist) { // for every song in the playlist, write the song's ToString to the console
-                if (song.SongID == idToUpdate){
-                    song.SongTitle = titleToUpdate;
-                    UpdateSong mySong = new UpdateSong();
-                    mySong.Update(song);
-                }
-            }
+        //     foreach (Song song in playlist) { // for every song in the playlist, write the song's ToString to the console
+        //         if (song.SongID == idToUpdate){
+        //             song.SongTitle = titleToUpdate;
+        //             UpdateSong mySong = new UpdateSong();
+        //             mySong.Update(song);
+        //         }
+        //     }
             
            
 
-        }
+        // }
         public void FavoriteSong()
         {
             List<Song> playlist = new List<Song>();
