@@ -15,7 +15,7 @@ namespace api.Controllers
     public class SongsController : ControllerBase
     {
         // GET: api/Songs -async
-        [EnableCors("Open Policy")]
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Song> Get()
         {
@@ -27,7 +27,7 @@ namespace api.Controllers
         }
 
         // GET: api/Songs -async/5
-        [EnableCors("Open Policy")]
+        [EnableCors("AnotherPolicy")]
         [HttpGet("{id}", Name = "Get")]
         public Song Get(int id)
         {
@@ -38,7 +38,7 @@ namespace api.Controllers
         }
 
         // POST: api/Songs -async // create
-        [EnableCors("Open Policy")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void Post([FromBody] Song song)
         {
@@ -47,21 +47,22 @@ namespace api.Controllers
         }
 
         // PUT: api/Songs -async/5 // update and favorite
-        [EnableCors("Open Policy")]
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Song song)
+        [EnableCors("AnotherPolicy")]
+        [HttpPut]
+        public void Put([FromBody] string song)
         {
             UpdateSong updateSong = new UpdateSong();
-            updateSong.FavoriteUpdate(song);
+            Song s = new Song(){SongTitle = song};
+            updateSong.FavoriteUpdate(s);
         }
 
         // DELETE: api/Songs -async/5 // delete
-        [EnableCors("Open Policy")]
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [EnableCors("AnotherPolicy")]
+        [HttpDelete ("{SongTitle}")]
+        public void Delete(string SongTitle)
         {
             DeleteSong deleteSong = new DeleteSong();
-            deleteSong.Delete(id);
+            deleteSong.Delete(SongTitle);
         }
     }
 }

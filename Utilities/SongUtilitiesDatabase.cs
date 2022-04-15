@@ -41,15 +41,15 @@ namespace api.Utilities
 
         public void DeleteSong() { 
             
-            Console.WriteLine("What is the id of the song you would like to delete?");
-            int IDToDelete =int.Parse(Console.ReadLine());
+            Console.WriteLine("What is the title of the song you would like to delete?");
+            string titetodelete = Console.ReadLine();
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.cs;
 
             using var con = new MySqlConnection(cs);
             con.Open();
             
-            string stm =@$"Delete FROM song WHERE SongID = {IDToDelete};";
+            string stm =@$"Delete FROM song WHERE SongTitle = {titletodelete};";
 
              using var cmd = new MySqlCommand(stm, con);
 
@@ -96,12 +96,12 @@ namespace api.Utilities
 
             PrintPlaylist();
 
-            Console.WriteLine("What is the id of the song you would like to edit");
-            int idToFav = int.Parse(Console.ReadLine());
+            Console.WriteLine("What is the title of the song you would like to edit");
+            int titletofave = Console.ReadLine();
 
             foreach (Song song in playlist)
             {
-                if (song.SongID == idToFav)
+                if (song.SongTitle == titletofave)
                 {
                     song.FavoriteSong = "y";
                     UpdateSong mySong = new UpdateSong();

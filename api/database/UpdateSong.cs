@@ -54,13 +54,13 @@ namespace api.database
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @$"UPDATE song SET Favorite = @Favorite;";
+            string stm = @$"UPDATE song SET Favorite = @Favorite WHERE SongTitle= @SongTitle;";
 
 
             using var cmd = new MySqlCommand(stm, con);
 
-            cmd.Parameters.AddWithValue("@SongId", song.SongID);
-            cmd.Parameters.AddWithValue("@Favorite", song.Favorite);
+            cmd.Parameters.AddWithValue("@SongTitle", song.SongTitle);
+            cmd.Parameters.AddWithValue("@Favorite", "y");
 
             cmd.ExecuteNonQuery();
             con.Close();

@@ -4,7 +4,7 @@ namespace api
     {
           public string cs  {get;set;}
 
-        public void ConnectionString()
+        public connectionstring()
         {
             string server = "qz8si2yulh3i7gl3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
             string database = "	q1kqpauwh9p1bdnb";
